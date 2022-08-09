@@ -1,12 +1,7 @@
-import CustomClasses from './components/CustomClasses/CustomClasses'
 import Text from './components/Text/Text'
 import AppPage from './components/Page/AppPage'
-import CheckBox from './components/Checkbox/Checkbox'
-import Select from './components/Select/Select'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Image from './components/Image/Image'
 import Main from './components/Main/Main'
+import MultifieldTab from './components/MultifiledTab'
 import {
   withComponentMappingContext,
   AllowedComponentsContainer,
@@ -27,22 +22,10 @@ const EditConfig = {
               ↓  NEW COMPONENTS MAPPING COME HERE  ↓
 **********************************************************************/
 
-MapTo('vue/components/customclasses')(CustomClasses, EditConfig)
-
-// Select Component Mapping
-MapTo('vue/components/select')(Select, EditConfig)
-
-// Checkbox Component Mapping
-MapTo('vue/components/checkbox')(CheckBox, EditConfig)
-
-// Header Component Mapping
-MapTo('vue/components/header')(Header, EditConfig)
+MapTo('vue/components/multifield-tabs')(MultifieldTab, EditConfig)
 
 // Header Component Mapping
 MapTo('vue/components/main')(Main, EditConfig)
-
-// Footer Component Mapping
-MapTo('vue/components/footer')(Footer, EditConfig)
 
 // Image Component Mapping
 MapTo('vue/components/image')(Image, {
