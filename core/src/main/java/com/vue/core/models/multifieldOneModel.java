@@ -18,23 +18,25 @@
 
 package com.vue.core.models;
 
-import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code MultifieldTabs} Sling Model used for the {@code vue/components/multifield-tabs} component.
+ * Defines the {@code multifieldOneModel} Sling Model used for the multifield in {@code vue/components/multifield-tabs} component.
  * 
  */
 @ConsumerType
-public interface MultifieldTabs
+public interface multifieldOneModel
     extends ComponentExporter
 {
 
 
-    List<multifieldOneModel> getMultifieldOne();
+    @JsonProperty("textZero")
+    String getTextZero();
 
-    List<multifieldTwoModel> getMultifieldTwo();
+    @JsonProperty("buttonOne")
+    String getButtonOne();
 
 }

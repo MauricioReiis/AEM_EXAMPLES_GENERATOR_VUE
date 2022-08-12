@@ -18,47 +18,46 @@
 
 package com.vue.core.models.impl;
 
-import java.util.Collections;
-import java.util.List;
-import com.adobe.acs.commons.models.injectors.annotation.ChildResourceFromRequest;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
-import com.vue.core.models.MultifieldTabs;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vue.core.models.multifieldOneModel;
-import com.vue.core.models.multifieldTwoModel;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = {
     SlingHttpServletRequest.class
 }, adapters = {
-    MultifieldTabs.class,
+    multifieldOneModel.class,
     ComponentExporter.class
-}, resourceType = "vue/components/multifield-tabs")
+})
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-public class MultifieldTabsImpl
-    implements MultifieldTabs
+public class multifieldOneModelImpl
+    implements multifieldOneModel
 {
 
-    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private List<multifieldOneModel> multifieldOne;
-    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private List<multifieldTwoModel> multifieldTwo;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String textZero;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String buttonOne;
     @SlingObject
     private Resource resource;
 
     @Override
-    public List<multifieldOneModel> getMultifieldOne() {
-        return multifieldOne != null ? Collections.unmodifiableList(multifieldOne) : null;
+    @JsonProperty("textZero")
+    public String getTextZero() {
+        return textZero;
     }
 
     @Override
-    public List<multifieldTwoModel> getMultifieldTwo() {
-        return multifieldTwo != null ? Collections.unmodifiableList(multifieldTwo) : null;
+    @JsonProperty("buttonOne")
+    public String getButtonOne() {
+        return buttonOne;
     }
 
     @Override

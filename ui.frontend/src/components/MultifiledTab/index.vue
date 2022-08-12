@@ -1,7 +1,8 @@
 <template>
   <div>
     <div v-for="item in multifieldOne" :key="item">
-      <h1>{{ item.item }}</h1>
+      <h1>{{ item.textZero }}</h1>
+      <button>{{ item.buttonOne }}</button>
     </div>
     <div v-for="item in multifieldTwo" :key="item">
       <h3>{{ item.textOne }}</h3>
@@ -18,7 +19,8 @@ export default {
       type: Array,
       default: () => [
         {
-          item: 'Eu sou um texto'
+          textZero: 'Eu sou um texto',
+          buttonOne: 'Eu sou um botão'
         }
       ]
     },

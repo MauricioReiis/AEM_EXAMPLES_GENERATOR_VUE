@@ -52,6 +52,13 @@
             "label": "Digite um texto:",
             "json-expose": true,
             "json-property": "textZero"
+          },
+          {
+            "field": "buttonOne",
+            "type": "textfield",
+            "label": "Digite um texto para o botão:",
+            "json-expose": true,
+            "json-property": "buttonOne"
           }
         ]
       },

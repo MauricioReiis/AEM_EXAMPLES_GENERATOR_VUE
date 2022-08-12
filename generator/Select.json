@@ -23,9 +23,7 @@
     "testclass": false,
     "junit-major-version": 5,
     "content-exporter": true,
-    "model-adaptables": [
-      "request"
-    ],
+    "model-adaptables": ["request"],
     "generic-javadoc": false,
     "properties": [
       {
